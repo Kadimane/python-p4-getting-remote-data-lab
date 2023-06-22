@@ -4,10 +4,14 @@ import json
 class GetRequester:
 
     def __init__(self, url):
-        self.url = url
+        self.url = 'https://learn-co-curriculum.github.io/json-site-example/endpoints/people.json'
 
     def get_response_body(self):
-        pass
+        response = requests.get(self.url)
+        return response.content
+        
 
     def load_json(self):
-        pass
+        response_body = self.get_response_body()
+        return eval (response_body)
+        
